@@ -1,0 +1,21 @@
+server:
+  port: ${PORT:8080}
+
+grpc:
+  port: ${GPORT:9898}
+
+spring:
+  application:
+    name: sky-grpc-server
+
+logging:
+  config: classpath:log4j2.xml
+
+promethus:
+  gateway: ${PROMETHUS_GATEWAT:http://192.168.56.105:31247/}
+  batchSize: ${BATCH_SIZE:1000}
+  batchIntervalMs: ${BATCH_INTERVAL_MS:30000}
+
+skywalking:
+  metrics: ${SW_METRICS:service_sla,service_cpm,service_resp_time}
+  urlPrefixList: ${SW_URL_PREFIX_LIST:""}
